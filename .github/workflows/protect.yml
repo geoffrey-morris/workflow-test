@@ -1,0 +1,13 @@
+name: Branch Protection
+
+on: workflow_dispatch
+
+jobs:
+  job-id: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update branch protection
+        uses: Hatzelencio/branch-protection@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{secrets.WORKFLOW}}
